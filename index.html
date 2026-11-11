@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lost sales · RADAR+</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <a class="logo" href="#"><img src="assets/radar-logo.png" alt="RADAR" height="22"><span class="plus">+</span></a>
+    <nav class="nav">
+      <a href="#">Inventory</a><a href="#">Replenishment</a><a href="#">Fitting rooms</a><a href="#">Fulfillment</a><a href="#" class="on">Analytics</a>
+    </nav>
+    <div class="top-r">
+      <button class="store-sel"><i class="ph ph-storefront"></i><span id="storeName">Store</span><i class="ph ph-caret-down"></i></button>
+      <span class="avatar">MG</span>
+    </div>
+  </div>
+</header>
+<div class="subnav">
+  <div class="subnav-in">
+    <a href="#">Availability</a><a href="#">Dwell time</a><a href="#">Try-on conversion</a><a href="#">Phantom inventory</a><a href="#" class="on">Lost sales <span class="tag">NEW</span></a>
+    <div class="range"><i class="ph ph-calendar-blank"></i><span id="rangeLbl">…</span></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="head">
+    <div>
+      <div class="eyebrow">ANALYTICS / LOST SALES</div>
+      <h1>Lost sales from floor gaps</h1>
+      <p class="lede" id="lede">…</p>
+    </div>
+  </div>
+
+  <section class="kpis" id="kpis"></section>
+
+  <section class="row2">
+    <article class="panel">
+      <div class="ph-head"><div><div class="eyebrow">BY WEEK</div><h2>Lost revenue by cause</h2></div><div class="legend" id="weekLegend"></div></div>
+      <div id="weekChart" class="chart"></div>
+    </article>
+    <article class="panel">
+      <div class="ph-head"><div><div class="eyebrow">WHAT-IF</div><h2>Replenishment speed</h2></div></div>
+      <p class="muted">If every floor gap with stock in the backroom were refilled within</p>
+      <div class="sla"><input type="range" id="sla" min="15" max="240" step="15" value="30"><b id="slaVal">30 min</b></div>
+      <div class="sla-out" id="slaOut"></div>
+      <div class="note" id="slaNote"></div>
+    </article>
+  </section>
+
+  <section class="row2 wide-left">
+    <article class="panel">
+      <div class="ph-head"><div><div class="eyebrow">SKU DETAIL</div><h2>Where the store lost the most</h2></div>
+        <div class="seg" id="causeSeg"><button class="on" data-c="all">All causes</button><button data-c="1">In backroom</button><button data-c="2">Misplaced</button><button data-c="3">Out of stock</button></div></div>
+      <div id="skuTable"></div>
+    </article>
+    <article class="panel" id="detail"></article>
+  </section>
+
+  <section class="row2">
+    <article class="panel">
+      <div class="ph-head"><div><div class="eyebrow">METHOD</div><h2>How many shoppers take the next size?</h2></div></div>
+      <div id="profile" class="chart small"></div>
+      <p class="muted" id="profileNote"></p>
+    </article>
+    <article class="panel">
+      <div class="ph-head"><div><div class="eyebrow">VALIDATION</div><h2>Checked against known answers</h2></div></div>
+      <div id="valid"></div>
+    </article>
+  </section>
+  <footer class="foot">Unofficial concept demo by Mohith Gajjela. Not affiliated with RADAR. Synthetic data.</footer>
+</main>
+<div class="tip" id="tip" hidden></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
